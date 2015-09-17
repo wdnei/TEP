@@ -1,0 +1,5 @@
+.idea
+.project
+*/**/lib
+*/**/project
+*/**/target
