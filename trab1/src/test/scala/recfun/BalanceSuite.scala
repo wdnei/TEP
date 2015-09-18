@@ -22,4 +22,35 @@ class BalanceSuite extends FunSuite {
   // Escreva mais testes.
   // ==================================================================
 
+  test("balance: '(' is not balanced") {
+    assert(!balance("(".toList))
+  }
+
+
+  test("balance: ')' is not balanced") {
+    assert(!balance(")".toList))
+  }
+
+
+  test("balance: '()' is balanced") {
+    assert(balance("()".toList))
+  }
+
+
+  test("balance: ')(' is not balanced") {
+    assert(!balance(")(".toList))
+  }
+
+
+  test("balance: ':-)' is not balanced") {
+    assert(!balance(":-)".toList))
+  }
+
+  test("balance: '())(' is not balanced") {
+    assert(!balance("())(".toList))
+  }
+
+  test("balance: 'Eu disse a ele (isso (ainda) não acabou). (Mas ele não escutou)' is balanced") {
+    assert(balance("Eu disse a ele (isso (ainda) não acabou). (Mas ele não escutou)".toList))
+  }
 }

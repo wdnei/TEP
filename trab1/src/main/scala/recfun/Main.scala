@@ -77,8 +77,10 @@ object Main {
                 else
                   countChangeIter(money, coins.tail) + countChangeIter(money - coins.head, coins)
 	}
+	
+	//coins.distinct; remove duplicates
+    	countChangeIter(money, coins.distinct.sortWith(_.compareTo(_) < 0));
 
-    countChangeIter(money, coins.sortWith(_.compareTo(_) < 0))
   
   }
 }
