@@ -1,3 +1,9 @@
+/* 
+* Trabalho 2
+* Aluno:Wdnei Ribeiro da Paixao
+* 
+*/
+
 import java.io.File
 
 package object common {

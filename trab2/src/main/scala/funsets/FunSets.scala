@@ -1,3 +1,9 @@
+/* 
+* Trabalho 2
+* Aluno:Wdnei Ribeiro da Paixao
+* 
+*/
+
 package funsets
 
 import common._
@@ -50,9 +56,11 @@ object FunSets {
     */
   def forall(s: Set, p: Int => Boolean): Boolean = {
     def iter(a: Int): Boolean = {
-      if(!s(a) && p(a)) false
-      else if  (a>bound) true
+      //println(a);
+      if(a>bound) true
+      else if  (!s(a) && p(a)){ false;  }
       else iter(a+1)
+    
     }
     iter(-bound)
   }
@@ -61,7 +69,7 @@ object FunSets {
     * especificados por `bound`) dentro de `s` satisfazem o predicado
     * `p`; e `false` caso contrário.
     */
-  def exists(s: Set, p: Int => Boolean): Boolean =forall(s, union(s,p))
+  def exists(s: Set, p: Int => Boolean): Boolean ={!forall( (x: Int) => !s(x),p)}
 
   /** Retorna um conjunto transformado pela aplicação de `f` a cada
    * elemntos do conjunto `s`.
